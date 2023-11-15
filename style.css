@@ -20,6 +20,11 @@ ul {
 
 button {
     border: none;
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 /*
@@ -88,7 +93,7 @@ button {
 .sidebar-list {
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
-    gap: 20px;
+    gap: 5px;
 }
 
 .information {
@@ -100,7 +105,16 @@ button {
     grid-template-columns: auto 1fr;
     /* TODO: Check if there's a better way to space the icons */
     gap: 30px;
-    padding-left: 30px;
+    padding: 10px 0 10px 30px;
+}
+.list-item:hover {
+    font-weight: bolder;
+    /* background-color: rgb(4, 0, 255); */
+    border: 2px solid #1992d4;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: rgb(255, 187, 0);
 }
 
 .icon {
@@ -120,6 +134,38 @@ button {
  .header-top {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 100px;
+ }
+
+ .search {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    align-items: center;
+    padding-left: 100px;
+ }
+
+ .search-button {
+    cursor: pointer;
+ }
+
+ .searchbar {
+    height: 30px;
+    width: clamp(200px, 100%, 700px);
+    background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+ }
+
+ .profile-info-small {
+    display: grid;
+    grid-template-columns: auto auto 150px;
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+    justify-content: end;
+    padding-right: 50px;
  }
 
 /*
@@ -154,7 +200,7 @@ button {
     gap: 30px;
     align-items: center;
     justify-content: end;
-    padding-right: 50px;
+    padding-right: 70px;
  }
 
  .action-buttons > button {
