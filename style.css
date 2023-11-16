@@ -67,6 +67,7 @@ button {
     grid: 1fr 1fr / 3fr 1fr;
     column-gap: 20px;
     row-gap: 30px;
+    padding: 0 40px 50px 0;
     padding-right: 40px;
     background-color: #e2e8f0;
 }
@@ -229,6 +230,24 @@ button {
     grid-template-rows: 50px 1fr;
 }
 
+.card,
+.announcements,
+.trending {
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.announcements,
+.trending {
+    padding: 20px;
+    font-size: small;
+}
+
+.section-title {
+    align-self: center;
+}
+
 /*
  * Project Cards
  */ 
@@ -243,16 +262,12 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
     gap: 30px;
-    padding: 10px 0 50px 0;
 }
 
 .card {
     display: grid;
     grid-template-rows: 1fr 30px;
     padding: 20px 20px 20px 40px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
     border-left: 10px solid rgb(179, 44, 62);
     cursor: pointer;
 }
@@ -287,18 +302,46 @@ button {
  * Announcements
  */
  
-.announcements {
+ .announcements {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    padding: 30px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
-.announcements > * {
-    padding: 0 10px;
+.announcements > .titled-text {
+    padding: 10px;
 } 
+/* Draws a divider line betwene all announcements */
 .announcements > :not(:last-child) {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
+/*
+ * Trending
+ */
+
+.trending {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.trending-item {
+    display: grid;
+    grid: repeat(2, 1fr) / auto 1fr;
+    cursor: pointer;
+}
+
+.trending-profile-pic {
+    grid-area: 1 / 1 / -1 / 2;
+
+}
+
+.trending-tag {
+    align-self: end;
+}
+.trending-tag:hover {
+    text-decoration: underline;
+}
+
+.trending-name {
+    align-self: start;
+}
