@@ -27,12 +27,16 @@ button {
     cursor: pointer;
 }
 
+/* Controls the colour scheme of the page */
 :root {
     --primary:#e0aa6e;
-    --primary-darker: #e0aa5e;
     --secondary: #201e21;
-    --secondary-lighter: #201e51;
+    --tertiary: #ddc2a5;
+    --tertiary-lighter: #ddc2a540;
+    --black: #000000;
+    --white: #ffffff;
 }
+
 /*
  * -------------------------------------------------------------------------------
  * Outer Page Styling
@@ -43,7 +47,7 @@ button {
     min-height: 100vh;
     min-width: 100vw;
     display: grid;
-    grid: 1fr 4fr / 1fr 5fr;
+    grid: 200px 4fr / 1fr 5fr;
 }
 
 .sidebar {
@@ -52,7 +56,7 @@ button {
     grid-template-rows: repeat(3, auto);
     align-content: start;
     gap: 60px;
-    color: #000000;
+    color: var(--black);
     font-size: large;
     font-weight: bold;
     background-color: var(--primary);
@@ -61,10 +65,10 @@ button {
 .header {
     grid-area: 1 / 2 / 2 / -1;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.25);
     z-index: 1;
-    background-color: #ffffff;
+    background-color: white;
 }
 
 .main-content {
@@ -121,13 +125,13 @@ button {
 .list-item:hover {
     border: 2px solid rgba(0, 0, 0, 0);
     border-left: 2px solid var(--secondary);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--tertiary);
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
 .icon {
-    fill: #ffffff;
+    fill: var(--white);
 }
 
 /*
@@ -244,13 +248,13 @@ button {
 .action-buttons > button {
     border-radius: 50px;
     padding: 12px 10px;
-    color: #ffffff;
+    color: var(--black);
     font-size: medium;
     font-weight: 500;
-    background-color:var(--secondary);
+    background-color:var(--primary);
 }
 .action-buttons > button:hover {
-    background-color: var(--secondary-lighter);
+    background-color: var(--tertiary);
 }
 
  /*
@@ -268,7 +272,7 @@ button {
 .announcements,
 .trending {
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: var(--white);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -336,20 +340,20 @@ button {
  * Announcements
  */
  
- .announcements {
+.announcements {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
 }
 .announcements > .titled-text {
     padding: 10px;
 } 
-/* Draws a divider line betwene all announcements */
+/* Draws a divider line between all announcements */
 .announcements > :not(:last-child) {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .announcements > .titled-text:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--tertiary-lighter);
     cursor: pointer;
 }
 
