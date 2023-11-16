@@ -27,6 +27,12 @@ button {
     cursor: pointer;
 }
 
+:root {
+    --primary:#e0aa6e;
+    --primary-darker: #e0aa5e;
+    --secondary: #201e21;
+    --secondary-lighter: #201e51;
+}
 /*
  * -------------------------------------------------------------------------------
  * Outer Page Styling
@@ -46,10 +52,10 @@ button {
     grid-template-rows: repeat(3, auto);
     align-content: start;
     gap: 60px;
-    color: #ffffff;
+    color: #000000;
     font-size: large;
     font-weight: bold;
-    background-color: #1992f4;
+    background-color: var(--primary);
 }
 
 .header {
@@ -82,7 +88,7 @@ button {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     padding-left: 10px;
     font-size: larger;
     font-weight: bolder;
@@ -109,16 +115,15 @@ button {
 .list-item {
     display: grid;
     grid-template-columns: auto 1fr;
-    /* TODO: Check if there's a better way to space the icons */
     gap: 30px;
     padding: 10px 0 10px 30px;
 }
 .list-item:hover {
-    border: 2px solid #1992f4;
-    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-left: 2px solid var(--secondary);
+    background-color: rgba(0, 0, 0, 0.1);
     padding-top: 8px;
     padding-bottom: 8px;
-    color: rgb(255, 187, 0);
 }
 
 .icon {
@@ -159,7 +164,7 @@ button {
     grid-template-columns: auto 1fr;
     gap: 15px;
     align-items: center;
-    padding-left: 100px;
+    padding-left: 120px;
 }
 
 .search-button {
@@ -242,10 +247,10 @@ button {
     color: #ffffff;
     font-size: medium;
     font-weight: 500;
-    background-color:#1992f8;
+    background-color:var(--secondary);
 }
 .action-buttons > button:hover {
-    background-color: #1992d4;
+    background-color: var(--secondary-lighter);
 }
 
  /*
@@ -297,11 +302,11 @@ button {
     display: grid;
     grid-template-rows: 1fr 30px;
     padding: 20px 20px 20px 40px;
-    border-left: 10px solid rgb(179, 44, 62);
+    border-left: 10px solid var(--secondary);
     cursor: pointer;
 }
 .card:hover {
-    outline: 2px solid rgb(179, 44, 62);
+    outline: 2px solid var(--secondary);
 }
 
 .titled-text {
@@ -341,6 +346,11 @@ button {
 /* Draws a divider line betwene all announcements */
 .announcements > :not(:last-child) {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.announcements > .titled-text:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 /*
